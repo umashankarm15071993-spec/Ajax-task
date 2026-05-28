@@ -1,0 +1,16 @@
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as ec
+
+
+class Count:
+    pop_count = "//div[contains(@class,'counter-ticker')]"
+
+    def __init__(self,driver):
+        self.driver=driver
+        self.wait = WebDriverWait(driver, 2)
+
+    def main(self):
+
+        loc=self.wait.until(ec.visibility_of_element_located((By.XPATH,self.pop_count)))
+        return loc.text
