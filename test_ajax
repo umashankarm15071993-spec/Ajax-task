@@ -1,0 +1,15 @@
+
+from POM.pageOM import Count
+
+
+def test_main(setup):
+    driver=setup
+    obj=Count(driver)
+
+    try:
+        while True:
+
+            print(obj.main(), flush=True)
+
+    except KeyboardInterrupt:
+        print("stopped by Ctrl+C")
